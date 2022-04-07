@@ -422,7 +422,7 @@
   },
   "searchCollection": {
     "message": "Search Collection"
-  },
+  },  
   "searchFolder": {
     "message": "Search Folder"
   },
@@ -1397,7 +1397,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Search Trash"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently Delete Item"
@@ -1828,5 +1828,17 @@
         "example": "name@example.com"
       }
     }
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "myVault": {
+    "message": "My Vault"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
   }
 }

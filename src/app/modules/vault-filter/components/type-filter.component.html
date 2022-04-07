@@ -1,0 +1,47 @@
+<div class="filter-heading">
+  <i
+    class="bwi bwi-fw"
+    title="{{ 'toggleCollapse' | i18n }}"
+    aria-hidden="true"
+    [ngClass]="{
+      'bwi-angle-right': isCollapsed,
+      'bwi-angle-down': !isCollapsed
+    }"
+    (click)="toggleCollapse()"
+    appStopProp
+  ></i>
+  <h2>&nbsp;{{ typesNode.name | i18n }}</h2>
+</div>
+<ul *ngIf="!isCollapsed" class="filter-options">
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Login }"
+  >
+    <a href="#" appStopClick appBlurClick (click)="applyFilter(cipherTypeEnum.Login)">
+      <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
+    </a>
+  </li>
+  <li class="filter-option" [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Card }">
+    <a href="#" appStopClick appBlurClick (click)="applyFilter(cipherTypeEnum.Card)">
+      <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
+    </a>
+  </li>
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Identity }"
+  >
+    <a href="#" appStopClick appBlurClick (click)="applyFilter(cipherTypeEnum.Identity)">
+      <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
+    </a>
+  </li>
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.SecureNote }"
+  >
+    <a href="#" appStopClick appBlurClick (click)="applyFilter(cipherTypeEnum.SecureNote)">
+      <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
+        "typeSecureNote" | i18n
+      }}
+    </a>
+  </li>
+</ul>

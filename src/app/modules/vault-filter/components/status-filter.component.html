@@ -1,0 +1,28 @@
+<ng-container *ngIf="show">
+  <h2 class="sr-only">{{ "filters" | i18n }}</h2>
+  <ul class="filter-options">
+    <li class="filter-option" [ngClass]="{ active: activeFilter.status === 'all' }">
+      <a href="#" appStopClick appBlurClick (click)="applyFilter('all')">
+        <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allItems" | i18n }}
+      </a>
+    </li>
+    <li
+      class="filter-option"
+      *ngIf="!hideFavorites"
+      [ngClass]="{ active: activeFilter.status === 'favorites' }"
+    >
+      <a href="#" appStopClick appBlurClick (click)="applyFilter('favorites')">
+        <i class="bwi bwi-fw bwi-star" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
+      </a>
+    </li>
+    <li
+      class="filter-option"
+      *ngIf="!hideTrash"
+      [ngClass]="{ active: activeFilter.status === 'trash' }"
+    >
+      <a href="#" appStopClick appBlurClick (click)="applyFilter('trash')">
+        <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>&nbsp;{{ "trash" | i18n }}
+      </a>
+    </li>
+  </ul>
+</ng-container>

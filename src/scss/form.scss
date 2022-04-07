@@ -1,0 +1,79 @@
+form,
+.form {
+  .form-group {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    input,
+    select,
+    textarea {
+      border: 1px solid #000000;
+      border-radius: $border-radius;
+      display: block;
+
+      @include themify($themes) {
+        border-color: themed("inputBorderColor");
+      }
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      padding: 5px;
+      width: 100%;
+    }
+  }
+
+  .checkbox {
+    position: relative;
+    display: block;
+    padding-left: 18px;
+
+    label {
+      margin-bottom: 0;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      margin-top: 4px;
+      margin-left: -18px;
+    }
+  }
+
+  .radio {
+    position: relative;
+    display: block;
+    padding-left: 18px;
+    margin-top: 4px;
+
+    &.radio-mt-2 {
+      margin-top: 2px;
+    }
+
+    label {
+      margin-bottom: 0;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      margin-top: 4px;
+      margin-left: -18px;
+    }
+  }
+
+  .help-block {
+    margin-top: 3px;
+    display: block;
+
+    @include themify($themes) {
+      color: themed("mutedColor");
+    }
+  }
+}
